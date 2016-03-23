@@ -16,7 +16,7 @@ var hasLoadingMask = (jQuery().mask ? true : false),
 
 // hook the event based on the version of bootstrap
     tabShowEvent = (bootstrapVersion2 ? 'show' : 'show.bs.tab'),
-    accordionShowEvent = (bootstrapVersion2 ? 'show' : 'show.bs.collapse'),
+//    accordionShowEvent = (bootstrapVersion2 ? 'show' : 'show.bs.collapse'),
     defaultSettings = {
         customLoadFn: null,
         loadFirstTab: false
@@ -41,16 +41,17 @@ $(function () {
             hasTab.click();
         }
 
-        var hasAccordion = $('[data-toggle=collapse][href=' + hash + ']');
-        if (hasAccordion) {
-            // for some reason we cannot execute the 'show' event for an accordion properly, so here's a workaround
-            if (hasAccordion[0] != $('[data-toggle=collapse]:first')[0]) {
-                hasAccordion.click();
-            }
-        }
+//        var hasAccordion = $('[data-toggle=collapse][href=' + hash + ']');
+//        if (hasAccordion) {
+//            // for some reason we cannot execute the 'show' event for an accordion properly, so here's a workaround
+//            if (hasAccordion[0] != $('[data-toggle=collapse]:first')[0]) {
+//                hasAccordion.click();
+//            }
+//        }
     }
 
-    firstTab = $('[data-toggle=tab]:first, [data-toggle=collapse]:first');
+//    firstTab = $('[data-toggle=tab]:first, [data-toggle=collapse]:first');
+    firstTab = $('[data-toggle=tab]:first');
 
     if (!customSettings.loadFirstTab && !hasTab) {
         firstTab.click();
@@ -75,7 +76,8 @@ var RemoteTabs = function (settings) {
             me.hasLoadingMask = !!hasLoadingMask;
 
             // enable all remote data tabs
-            $('[data-toggle=tab], [data-toggle=collapse]').each(function (k, obj) {
+//            $('[data-toggle=tab], [data-toggle=collapse]').each(function (k, obj) {
+            $('[data-toggle=tab]').each(function (k, obj) {
                 var bsObj = $(obj),
                     bsDiv,
                     bsData,
