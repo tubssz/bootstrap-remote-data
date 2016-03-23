@@ -125,20 +125,20 @@ var RemoteTabs = function (settings) {
 
                             }
 
-                            if (showEvent == accordionShowEvent) {
-                                hasOpenPanel = bsDiv.hasClass('in');
-                                // when an accordion is triggered, make the div the triggered object instead of the link
-                                if (bootstrapVersion2) {
-                                    bsObj = bsObj.parent();
-                                } else {
-                                    bsObj = bsObj.parents('.panel');
-                                }
-
-                                // If there is a panel already opened, make sure the data url is fetched
-                                if (hasOpenPanel) {
-                                    me._triggerChange(null, url, bsData, bsCallback, bsObj, bsDiv, simulateDelay, alwaysRefresh, originalObj);
-                                }
-                            }
+//                            if (showEvent == accordionShowEvent) {
+//                                hasOpenPanel = bsDiv.hasClass('in');
+//                                // when an accordion is triggered, make the div the triggered object instead of the link
+//                                if (bootstrapVersion2) {
+//                                    bsObj = bsObj.parent();
+//                                } else {
+//                                    bsObj = bsObj.parents('.panel');
+//                                }
+//
+//                                // If there is a panel already opened, make sure the data url is fetched
+//                                if (hasOpenPanel) {
+//                                    me._triggerChange(null, url, bsData, bsCallback, bsObj, bsDiv, simulateDelay, alwaysRefresh, originalObj);
+//                                }
+//                            }
 
                             bsObj.on(showEvent, function (e) {
                                 me._triggerChange(e, url, bsData, bsCallback, bsObj, bsDiv, simulateDelay, alwaysRefresh, originalObj);
